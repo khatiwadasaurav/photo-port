@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component matches snapshot DOM node structure 1`] = `
+<div
+  class="modalBackdrop"
+>
+  <div
+    class="modalContainer"
+  >
+    <h3
+      class="modalTitle"
+    >
+      test
+    </h3>
+    <img
+      alt="current category"
+    />
+    <p>
+      test
+    </p>
+    <button
+      type="button"
+    >
+      Close this modal
+    </button>
+  </div>
+</div>
+`;

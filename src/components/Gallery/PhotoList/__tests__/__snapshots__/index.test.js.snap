@@ -5,7 +5,28 @@ exports[`PhotoList is rendering renders 1`] = `
   <div>
     <div
       class="flex-row"
-    />
+    >
+      <img
+        alt="Grocery aisle"
+        class="img-thumbnail mx-1"
+      />
+      <img
+        alt="Grocery booth"
+        class="img-thumbnail mx-1"
+      />
+      <img
+        alt="Building exterior"
+        class="img-thumbnail mx-1"
+      />
+      <img
+        alt="Restaurant table"
+        class="img-thumbnail mx-1"
+      />
+      <img
+        alt="Cafe interior"
+        class="img-thumbnail mx-1"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
