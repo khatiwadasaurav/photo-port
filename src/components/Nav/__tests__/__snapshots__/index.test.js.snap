@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav component matches snapshot 1`] = `
+exports[`Nav component renders matches snapshot 1`] = `
 <DocumentFragment>
-  <header>
+  <header
+    class="flex-row px-1"
+  >
     <h2>
       <a
         data-testid="link"
@@ -31,13 +33,12 @@ exports[`Nav component matches snapshot 1`] = `
             About me
           </a>
         </li>
-        <li>
-          <a
-            data-testid="contact"
-            href="#contact"
-          >
+        <li
+          class="mx-2 undefined"
+        >
+          <span>
             Contact
-          </a>
+          </span>
         </li>
       </ul>
     </nav>

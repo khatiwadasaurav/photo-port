@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function Nav(props) {
-	const { categories, setCurrentCategory, currentCategory } = props;
-
-	useEffect(() => {
-		document.title = capitalizeFirstLetter(currentCategory?.name ?? "");
-	}, [currentCategory]);
+	const {
+		categories = [],
+		setCurrentCategory,
+		contactSelected,
+		currentCategory,
+		setContactSelected,
+	} = props;
 
 	return (
-		<header>
+		<header className="flex-row px-1">
 			<h2>
 				<a data-testid="link" href="/">
 					<span role="img" aria-label="camera">
@@ -22,29 +24,40 @@ function Nav(props) {
 			<nav>
 				<ul className="flex-row">
 					<li className="mx-2">
-						<a data-testid="about" href="#about">
+						<a
+							data-testid="about"
+							href="#about"
+							onClick={() => setContactSelected(false)}
+						>
 							About me
 						</a>
 					</li>
-					<li>
-						<a data-testid="contact" href="#contact">
+					<li
+						className={`mx-2 ${
+							contactSelected && "navActive"
+						}`}
+					>
+						<span onClick={() => setContactSelected(true)}>
 							Contact
-						</a>
+						</span>
 					</li>
-					{categories?.map((category) => (
+					{categories.map((category) => (
 						<li
 							className={`mx-1 ${
 								currentCategory.name ===
-									category.name && "navActive"
+									category.name &&
+								!contactSelected &&
+								"navActive"
 							}`}
 							key={category.name}
 						>
 							<span
-								onClick={() =>
-									setCurrentCategory(category)
-								}
+								onClick={() => {
+									setCurrentCategory(category);
+									setContactSelected(false);
+								}}
 							>
-								{category.name}
+								{capitalizeFirstLetter(category.name)}
 							</span>
 						</li>
 					))}
